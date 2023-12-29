@@ -1,0 +1,152 @@
+body {
+    position: relative;
+    padding: 0; margin: 0;
+    overflow-x: hidden;
+  }
+
+/* Calendar Head */
+#calHead {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-image: url(image/koi_fishes.jpeg);
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+#calHead select, #calHead input {
+    font-family: var(--font);
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: rgb(251, 242, 232);
+    cursor: pointer;
+    outline: none;
+}
+
+#calHead option {color: rgb(0, 0, 0);}
+
+#calMonth {
+    width: 45%;
+    text-align: center;
+}
+
+#calYear {
+    width: 20%;
+    text-align: center;
+}
+
+#calAdd {
+    position: absolute;
+    right: 5%;
+}
+
+/* Calendar Days */
+#calDays, .calRowHead, .calRowBack { display: flex; }
+
+#calDays, .calRow, .calRowHead, .calRowEvt {
+    position: relative;
+    width: 100%;
+}
+
+.calRow { min-height: 100px; }
+.calRowHead, .calRowEvt { z-index: 2; }
+.calRowBack {
+    position: absolute;
+    top: 0; left: 0; z-index: 1;
+    width: 100%; height: 100%;
+}
+
+.calRowEvt {
+    margin-top: 5px;
+    font-size: 12px;
+    white-space: nowrap; text-overflow: ellipsis;
+    overflow: hidden; cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.calCell { width: 14.2857%; }
+.w1 { width: 14.2857%; } 
+.w2 { width: 28.5714%; } 
+.w3 { width: 42.8571%; }
+.w4 { width: 57.1428%; } 
+.w5 { width: 71.4285%; } 
+.w6 { width: 85.7142%; }
+.w7 { width: 100%; }
+.o1 { left: 14.2857%; } 
+.o2 { left: 28.5714%; } 
+.o3 { left: 42.8571%; }
+.o4 { left: 57.1428%; } 
+.o5 { left: 71.4285%; } 
+.o6 { left: 85.7142%; }
+
+#calDays .calCell {
+    color: #ffffff; 
+    background: rgba(0, 0, 0, 0.573);
+    font-weight: 700; 
+    text-align: center;
+    margin-top: 7.5px;
+    padding: 5px;
+}
+
+.calRowHead .calCell {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.calRowBack .calCell { border: 1px solid #f5f5f5; }
+.calCellNo { background: #f5f5f5; }
+.calToday { background: #feffd3; }
+
+#calForm {
+    position:absolute; top: 0; left: 0; z-index: 999;
+    width: 100vw; height: 100%; min-height: 100vh;
+    padding: 0; margin: 0; border: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  #calForm:is([open]), #calForm form {
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+  }
+  #calForm form {
+    position: relative;
+    width: 600px; padding: 5px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  #evtX {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+  }
+  #calForm h2 { margin: 10px 0 5px 0; }
+  #calForm .evt50 { width: 40%;}
+  #calForm .evt100 { width: 100%; }
+  #calForm .evt50, #calForm .evt100 { padding: 15px; }
+  #calForm label, #calForm input[type=datetime-local], #calForm input[type=color], #calForm input[type=text] {
+    display: block;
+    width: 100%;
+  }
+  #calForm label {
+    color: #a1a1a1;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  #calForm input[type=datetime-local], #calForm input[type=text] {
+    padding: 5px;
+    border: 1px solid #eee;
+    background: #f5f5f5;
+  }
+  #calForm input[type=color] { height: 30px; border: 0; }
+  #calForm input[type=button], #calForm input[type=submit] {
+    border: 0; padding: 10px; margin: 10px 2px 0 0;
+    color: #0a0808; background: gray;
+    cursor: pointer;
+  }
